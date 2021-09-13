@@ -1,0 +1,41 @@
+<div class="mat-typography app-frame mat-app-background" [class]="activeTheme?.name" style="height: 100%;">
+  <mat-toolbar color="primary" class="mat-elevation-z3">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <i class="fad fa-home-alt" style="font-size: 20px;--fa-primary-opacity: 0.80;"></i>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <i class="fad fa-bookmark" style="font-size: 20px;--fa-primary-opacity: 0.80;"></i>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <i class="fad fa-share-alt" style="font-size: 20px;--fa-primary-opacity: 0.80;"></i>
+    </button>
+  </mat-toolbar>
+  <button mat-stroked-button color="primary" style="margin-right: 20px;margin-top: 50px;border-radius: 6px;border: 1px solid"
+    [ngStyle]="{ 'border-color': activeTheme?.primary}">
+    <i class="fad fa-file-alt"
+      style="margin-right:10px;font-size: 20px;--fa-primary-opacity: 0.80;--fa-primary-opacity: 0.80;--fa-primary-color: {{activeTheme?.primary }}; --fa-secondary-color: {{activeTheme?.primary2 }};"></i>
+    <span>PRIMARY</span>
+  </button>
+  <button mat-stroked-button color="accent" style="margin-right: 20px;margin-top: 50px;border-radius: 6px;border: 1px solid"
+    [ngStyle]="{'border-color':activeTheme?.accent}">
+    <i class="fad fa-file-alt"
+      style="margin-right:10px;font-size: 20px;--fa-primary-opacity: 0.80;--fa-primary-opacity: 0.80;--fa-primary-color: {{activeTheme?.accent }}; --fa-secondary-color: {{activeTheme?.accent2 }};"></i>
+    <span>ACCENT</span>
+  </button>
+  <button mat-stroked-button color="warn" style="margin-right: 20px;margin-top: 50px;border-radius: 6px;border: 1px solid"
+    [ngStyle]="{'border-color':activeTheme?.warn}">
+    <i class="fad fa-file-alt"
+      style="margin-right:10px;font-size: 20px;--fa-primary-opacity: 0.80;--fa-primary-opacity: 0.80;--fa-primary-color: {{activeTheme?.warn }}; --fa-secondary-color: {{activeTheme?.warn2 }};"></i>
+    <span>WARN</span>
+  </button>
+  <mat-form-field appearance="fill">
+    <mat-label>Wybierz motyw</mat-label>
+    <mat-select [(value)]="activeTheme">
+      <mat-option *ngFor="let theme of themes" [value]="theme">
+        {{theme.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
